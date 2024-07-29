@@ -1,0 +1,73 @@
+* {
+    /* 初始化 取消页面的内外边距 */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* 弹性布局 让页面元素水平+垂直居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative; /* 添加相对定位以确保伪元素定位正确 */
+    overflow: hidden; /* 确保背景覆盖整个页面 */
+}
+
+body:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(6, 6, 6, 0.877), rgba(203, 203, 203, 0.5)),
+                url('images/Release that Witch/RTW11.jpg') no-repeat center center fixed;
+    background-size: cover;
+    filter: grayscale(60%); /* 将背景图片设置为黑白 */
+    z-index: -1; /* 确保背景在所有内容的背后 */
+}
+
+
+.container {
+    position: relative;
+    display: grid;
+    grid-gap: 15px;
+    width: 900px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 150px 150px 200px 200px;
+    grid-template-areas: 
+        "img1 img3 img4" 
+        "img1 img3 img6"
+        "img2 img3 img6"
+        "img2 img5 img5";
+}
+
+.container .item {
+    position: relative;
+    background: #fff;
+    border-radius: 10px; /* 父元素的圆角 */
+    overflow: hidden; /* 确保圆角效果应用到图片 */
+}
+
+.container .item img {
+    display: block; /* 确保图片是块级元素 */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+    border-radius: 10px; /* 图片的圆角 */
+}
+
+.container:hover .item img:not(:hover) {
+    filter: grayscale(100%);
+    opacity: 0.9;
+}
+
+.container .img1 { grid-area: img1; }
+.container .img2 { grid-area: img2; }
+.container .img3 { grid-area: img3; }
+.container .img4 { grid-area: img4; }
+.container .img5 { grid-area: img5; }
+.container .img6 { grid-area: img6; }

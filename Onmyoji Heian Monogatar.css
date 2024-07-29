@@ -1,0 +1,11 @@
+/* 公共样式 */
+
+* {
+    /* 初始化 取消页面的内外边距 */
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: antiquewhite;
+}

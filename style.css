@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body
+{
+    background: #e9e9e9;
+    line-height: 1.6;
+    min-height: 200vh;
+}
+.container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 40px 100px;
+    z-index: 100000;
+}
+header.sticky
+{
+    padding: 5px 100px;
+    background: #fff;
+    transition: 0.6s;
+}
+header .logo
+{
+    position: relative;
+    font-weight: 700;
+    color: rgb(255, 250, 232);
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 1s;
+}
+header ul
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header ul li
+{
+    position: relative;
+    list-style: none;
+}
+header ul li a
+{
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: rgb(255, 250, 232);
+    letter-spacing: 2px;
+    font-weight: 500px;
+    transition: 1s;
+}
+.banner{
+    height: 100vh;
+    background: url('images/1.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(255, 250, 232);
+   
+    padding: 0 1em;
+    transition: 2s;
+}
+.banner h1 {
+    font-size: 4em;
+    margin: 2em 0;
+}
+header.sticky .logo,
+header.sticky ul li a
+{
+    color:#706f72
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+#about {
+    margin: 7em auto;
+    text-align: center;
+    max-width: 1200px;
+    margin-bottom: 2em;
+    padding: 2em 0;
+    color: #706f72;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+
+.hidden {
+    animation: fadeOut 1s forwards;
+}
+
+#about h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    color: #68686a;
+}
+
+/* 作品集 */
+.gallery {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    vertical-align: middle;
+    margin-top: 5em;
+    margin-bottom: 9em;
+    padding: 0 1em;
+    transition: 2s;
+}
+.span {
+    height: 400px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+}
+.card {
+    width: 80px;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 2rem;
+    margin: 0 10px;
+    display: flex;
+    align-items: flex-end;
+    transition: .6s cubic-bezier(.28, -0.03, 0, .99);
+    box-shadow: 11px 14px 20px -5px rgb(177, 182, 187);
+}
+.card:hover {
+    transform: scale(1.3);
+}
+.card > .row {
+    color: aliceblue;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.card > .row > .description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    height: 80px;
+    width: 520px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: .3s;
+    transition: all .3s ease;
+}
+.description h4 {
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.763);
+    padding: 20px;
+}
+input {
+    display: none;
+}
+input:checked + label {
+    width: 600px;
+}
+input:checked + label .description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+label[for='c1'] {
+    background-image: url('images/Release that Witch/RTW11.jpg');
+}
+label[for='c2'] {
+    background-image: url('images/Cooking with Valkyries/2.jpg');
+}
+label[for='c3'] {
+    background-image: url('images/GAME/基地会议室.jpg');
+}
+label[for='c4'] {
+    background-image: url('images/Onmyoji Heian Monogatar/阴阳师1.jpg');
+}
+label[for='c5'] {
+    background-image: url('images/practice/5.jpg');
+}
+label[for='c6'] {
+    background-image: url('images/SOE/SOE2.jpg');
+}
+label[for='c7'] {
+    background-image: url('images/To Be Heroine/TBX1.jpg');
+}
+label[for='c8'] {
+    background-image: url('images/White Lightning/PP1_1.jpg');
+}
+label[for='c9'] {
+    background-image: url('images/Shiyemiaoyin/识夜描银9.jpg');
+}
+label[for='c10'] {
+    background-image: url('images/Release that Witch/RTW11.jpg');
+}
+/* 页脚 */
+footer {
+    background: url('images/3.jpg') no-repeat center center/cover;
+    color: #ffffff6e;
+    padding: 300px 0;
+    position: relative;
+    overflow: hidden;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+}
+.footer-links{
+    padding: 3em 4em;
+}
+.footer-extras{
+    padding: 3em 4em;
+}
+.footer-contact{
+    padding: 3em 4em;
+}
+.footer-links ul, .footer-extras ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-links a, .footer-extras a {
+    color: #ffffff8f;
+    text-decoration: none;
+}
+.footer-contact h3, .footer-links h3, .footer-extras h3 {
+    color: #fdffe9bc;
+}
+.footer-contact p {
+    color: #ffffff8f;
+}
+.mask {
+    position: absolute;
+    top: 100%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(84, 54, 130, 0.607);
+    color: #fff;
+    transition: all .7s ease-out;
+}
+footer:hover .mask {
+    top: 0;
+}
+.mask h1 {
+    line-height: 50px;
+}
+.mask p {
+    padding: 20px;
+    font-weight: 500;
+    word-break: break-all;
+}
