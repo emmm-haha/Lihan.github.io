@@ -31,9 +31,21 @@ header
     z-index: 100000;
 }
 
+header .logo {
+    height: 60px; /* 设置logo的高度 */
+    max-height: 100%; /* 确保logo不会超过容器高度 */
+    width: auto; /* 使宽度根据高度自动调整 */
+    transition: 0.6s; /* 添加过渡效果 */
+}
+header.sticky .logo {
+    content: url('images/LOGO.png');
+}
 @media (max-width: 600px) {
     header {
         font-size: 2.0rem; /* Adjust this value as needed */
+    }
+    header .logo {
+        height: 40px; /* 移动设备上缩小logo */
     }
 }
 
@@ -236,13 +248,13 @@ label[for='c7'] {
     background-image: url('images/To Be Heroine/TBX1.jpg');
 }
 label[for='c8'] {
-    background-image: url('images/White Lightning/PP1_1.jpg');
+    background-image: url('images/White Lightning/PP1.jpg');
 }
 label[for='c9'] {
-    background-image: url('images/Shiyemiaoyin/识夜描银9.jpg');
+    background-image: url('images/Shiyemiaoyin/SY11.jpg');
 }
 label[for='c10'] {
-    background-image: url('images/Release that Witch/RTW11.jpg');
+    background-image: url('images/Snow Child/XHZ1.jpg');
 }
 /* 页脚 */
 footer {
