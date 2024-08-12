@@ -303,9 +303,18 @@ footer {
     background: rgba(84, 54, 130, 0.607);
     color: #fff;
     transition: all .7s ease-out;
+    opacity: 0;
+    visibility: hidden;
 }
 footer:hover .mask {
     top: 0;
+    opacity: 1;
+    visibility: visible;
+}
+.mask.show {
+    top: 0;
+    opacity: 1;
+    visibility: visible;
 }
 .mask h1 {
     line-height: 50px;

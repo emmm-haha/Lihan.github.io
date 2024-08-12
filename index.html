@@ -212,6 +212,41 @@
                 currentChecked = document.querySelector('input[name="slide"]:checked');
             });
         });
+        document.addEventListener("DOMContentLoaded", function() {
+    var footerMask = document.querySelector("footer .mask");
+    var lastScrollTop = 0;
+    var delta = 5;  // 滚动方向检测的阈值
+
+    function isMobile() {
+        return /Mobi|Android/i.test(navigator.userAgent);
+    }
+
+    if (isMobile()) {
+        window.addEventListener("scroll", function() {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            var windowHeight = window.innerHeight;
+            var documentHeight = document.documentElement.scrollHeight;
+
+            // 检查用户是否到达页面底部
+            if (scrollTop + windowHeight >= documentHeight - delta) {
+                footerMask.classList.add("show");
+            } else {
+                // 如果用户向上滚动，隐藏mask
+                if (Math.abs(lastScrollTop - scrollTop) > delta) {
+                    if (scrollTop > lastScrollTop) {
+                        // 向下滚动
+                        footerMask.classList.remove("show");
+                    } else {
+                        // 向上滚动
+                        footerMask.classList.add("show");
+                    }
+                    lastScrollTop = scrollTop;
+                }
+            }
+        });
+    }
+});
+
     </script>
 </body>
 </html>
